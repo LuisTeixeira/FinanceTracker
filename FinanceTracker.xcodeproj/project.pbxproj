@@ -35,6 +35,8 @@
 		62E36690298875EC00B0106D /* RecentTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3668F298875EC00B0106D /* RecentTransactions.swift */; };
 		62E36693298878E600B0106D /* RecentTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E36692298878E600B0106D /* RecentTransactionsViewModel.swift */; };
 		62E3669529887B6A00B0106D /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3669429887B6A00B0106D /* TransactionList.swift */; };
+		62F87CD8298E7A5200707DA2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F87CD7298E7A5200707DA2 /* AuthenticationViewModel.swift */; };
+		62F87CDB298E867700707DA2 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F87CDA298E867700707DA2 /* Overview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		62E3668F298875EC00B0106D /* RecentTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactions.swift; sourceTree = "<group>"; };
 		62E36692298878E600B0106D /* RecentTransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsViewModel.swift; sourceTree = "<group>"; };
 		62E3669429887B6A00B0106D /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		62F87CD7298E7A5200707DA2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		62F87CDA298E867700707DA2 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				62A5BDE7298C5AB300407CAE /* AuthenticationHeader.swift */,
 				62A5BDE9298C5E6D00407CAE /* RegisterView.swift */,
 				62A5BDEE298C6AB900407CAE /* LoginView.swift */,
+				62F87CD7298E7A5200707DA2 /* AuthenticationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 		62A5BDEB298C5FFB00407CAE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				62F87CD9298E865A00707DA2 /* Overview */,
 				62F87CD6298E74CD00707DA2 /* Common */,
 				62E3668E2988705300B0106D /* Transaction */,
 				62A5BDE6298C5A4000407CAE /* Authentication */,
@@ -221,6 +227,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		62F87CD9298E865A00707DA2 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				62F87CDA298E867700707DA2 /* Overview.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -305,8 +319,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62F87CDB298E867700707DA2 /* Overview.swift in Sources */,
 				62B0A4342985960B006C89D2 /* PreviewData.swift in Sources */,
 				62A5BDED298C603700407CAE /* CustomTextInputField.swift in Sources */,
+				62F87CD8298E7A5200707DA2 /* AuthenticationViewModel.swift in Sources */,
 				62A5BDF3298DA90000407CAE /* UserService.swift in Sources */,
 				62B0A43F2985DD2B006C89D2 /* TransactionsViewModel.swift in Sources */,
 				62B0A4512986F5FB006C89D2 /* TransactionService.swift in Sources */,

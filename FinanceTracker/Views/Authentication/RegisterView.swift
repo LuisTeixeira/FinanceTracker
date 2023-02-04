@@ -11,6 +11,10 @@ struct RegisterView: View {
     @State private var email = ""
     @State private var fullname = ""
     @State private var password = ""
+    
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
+    
     var body: some View {
         VStack {
             AuthenticationHeader(title: "Welcome", subtitle: "Create Your account")
@@ -23,7 +27,7 @@ struct RegisterView: View {
             .padding(32)
             
             Button {
-                
+                authenticationViewModel.register(withEmail: email, passwored: password, fullname: fullname)
             } label: {
                 Text("Sign up")
                     .font(.headline)
@@ -36,6 +40,21 @@ struct RegisterView: View {
             .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
             
             Spacer()
+            
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                HStack {
+                    Text("Already have an account")
+                        .font(.footnote)
+                    Text("Sign In")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
+                .padding(.bottom, 32)
+                .foregroundColor(.primary)
+            }
+            .padding(32)
         }
         .ignoresSafeArea()
     }

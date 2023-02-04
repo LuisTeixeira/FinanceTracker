@@ -11,13 +11,19 @@ import Firebase
 @main
 struct FinanceTrackerApp: App {
     
+    @State var authenticationViewModel: AuthenticationViewModel
+    
     init() {
         FirebaseApp.configure()
+        authenticationViewModel = AuthenticationViewModel()
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
+            .environmentObject(authenticationViewModel)
         }
     }
 }

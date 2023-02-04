@@ -15,11 +15,28 @@ class AuthenticationService {
     }
     
     func register(withEmail email: String, password: String, fullname: String, completion: @escaping(FirebaseAuth.User) -> Void) {
-        Auth.auth().createUser(withEmail: password, password: fullname) { res, _ in
+        Auth.auth().createUser(withEmail: email, password: fullname) { res, error in
+            if let error = error {
+                print("DEBUG: Email: \(email)")
+                print("DEBUG: Failed to sing in with error \(error.localizedDescription)")
+                return
+            }
+            
             let user = res!.user
             UserService().saveUser(uid: user.uid, fullname: fullname) {
                 completion(user)
             }
+        }
+    }
+    
+    func login(withEmail email: String, password: String, completion: @escaping(FirebaseAuth.User) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { res, error in
+            if let error = error {
+                print("DEBUG: Failed to sing in with error \(error.localizedDescription)")
+                return
+            }
+            let user = res!.user
+            completion(user)
         }
     }
 }
