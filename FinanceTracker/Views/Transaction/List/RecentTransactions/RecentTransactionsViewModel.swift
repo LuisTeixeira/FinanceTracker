@@ -8,16 +8,18 @@
 import Foundation
 
 class RecentTransactionsViewModel : ObservableObject {
+    var userId: String
     @Published var transactions = [Transaction]()
     
     let service = TransactionService()
     
-    init() {
+    init(widthUserId userId: String) {
+        self.userId = userId
         fetchRecentTransactions()
     }
     
     func fetchRecentTransactions() {
-        service.fetchTransactions(limitTo: 3) { transactions in
+        service.fetchTransactions(userId: userId, limitTo: 3) { transactions in
             self.transactions = transactions
         }
     }

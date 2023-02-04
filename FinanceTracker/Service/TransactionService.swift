@@ -11,26 +11,32 @@ import Collections
 
 struct TransactionService {
     
-    func fetchTransactions(limitTo: Int, completion: @escaping([Transaction]) -> Void) {
+    func fetchTransactions(userId: String, limitTo: Int, completion: @escaping([Transaction]) -> Void) {
         var query = Firestore.firestore()
             .collection("transactions")
+            .whereField("userId", isEqualTo: userId)
             .order(by: "date", descending: true)
         
         query = (limitTo > 0) ? query.limit(to: limitTo) : query
         
-        query.getDocuments { snapshot, _ in
-                guard let documents = snapshot?.documents else {return}
-                let transations = documents.compactMap { try? $0.data(as: Transaction.self) }
-                completion(transations)
+        query.getDocuments { snapshot, error in
+            if let error = error {
+                print("DEBUG: Failed to sing in with error \(error.localizedDescription)")
+                return
             }
+            guard let documents = snapshot?.documents else {return}
+            let transations = documents.compactMap { try? $0.data(as: Transaction.self) }
+            completion(transations)
+        }
     }
     
-    func fetchCurrentMonthTransactions(limit: Int, completion: @escaping([Transaction]) -> Void) {
+    func fetchCurrentMonthTransactions(userId: String, limit: Int, completion: @escaping([Transaction]) -> Void) {
         let start = Date.now.beginOfCurrentMonth
         let end = Date.now.beginOfNextMonth
         
         var query = Firestore.firestore()
             .collection("transactions")
+            .whereField("userId", isEqualTo: userId)
             .whereField("date", isGreaterThan: start)
             .whereField("date", isLessThan: end)
             .order(by: "date", descending: true)
@@ -44,7 +50,7 @@ struct TransactionService {
         }
     }
     
-    func addTransaction(transaction: Transaction, completion: @escaping() -> Void) {
+    func addTransaction(userId: String, transaction: Transaction, completion: @escaping() -> Void) {
         let data = [
             "account": transaction.account,
             "amount": transaction.amount,
@@ -53,7 +59,8 @@ struct TransactionService {
             "isExpense": transaction.isExpense,
             "isTransfer": transaction.isTransfer,
             "merchant": transaction.merchant,
-            "type": transaction.type
+            "type": transaction.type,
+            "userId": userId
         ] as [String : Any]
         
         Firestore.firestore().collection("transactions")

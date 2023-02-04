@@ -14,7 +14,9 @@ class AuthenticationViewModel: ObservableObject {
     
     private let authService = AuthenticationService()
     
-
+    init() {
+        self.userSession = authService.currentUser()
+    }
     
     func register(withEmail email: String, passwored: String, fullname: String) {
         authService.register(withEmail: email, password: passwored, fullname: fullname) { user in

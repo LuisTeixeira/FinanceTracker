@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecentTransactions: View {
     @ObservedObject var viewModel: RecentTransactionsViewModel
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
     
     var body: some View {
         VStack {
@@ -19,7 +20,7 @@ struct RecentTransactions: View {
                 Spacer()
                 
                 NavigationLink {
-                    TransactionList()
+                    TransactionList(withUserId: self.authenticationViewModel.userSession!.uid)
                 } label: {
                     HStack(spacing: 4) {
                         Text("See All")

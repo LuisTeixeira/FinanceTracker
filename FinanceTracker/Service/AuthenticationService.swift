@@ -15,7 +15,7 @@ class AuthenticationService {
     }
     
     func register(withEmail email: String, password: String, fullname: String, completion: @escaping(FirebaseAuth.User) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: fullname) { res, error in
+        Auth.auth().createUser(withEmail: email, password: password) { res, error in
             if let error = error {
                 print("DEBUG: Email: \(email)")
                 print("DEBUG: Failed to sing in with error \(error.localizedDescription)")

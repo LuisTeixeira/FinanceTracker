@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct TransactionList: View {
-    @ObservedObject var viewModel = TransactionsViewModel()
+    var userId: String
+    @ObservedObject var viewModel: TransactionsViewModel
+    
+    init(withUserId userId: String) {
+        self.userId = userId
+        self.viewModel = TransactionsViewModel(widthUserId: self.userId)
+    }
     
     var body: some View {
         VStack {
@@ -20,11 +26,5 @@ struct TransactionList: View {
         }
         .navigationTitle("Transactions")
         .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-struct TransactionList_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionList()
     }
 }
