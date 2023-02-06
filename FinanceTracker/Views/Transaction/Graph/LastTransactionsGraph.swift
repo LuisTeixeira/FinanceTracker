@@ -16,12 +16,14 @@ struct LastTransactionsGraph: View {
             let total = viewModel.graphData.reduce(0) { $0 + $1.1}
             BarChartView(
                 data: ChartData(values: viewModel.graphData),
-                title: total.formatted(.currency(code: "EUR")),
+                title: total.formatted(.currency(code: Locale.current.currency?.identifier ?? "EUR")),
                 style: Styles.barChartMidnightGreenDark,
-                form: ChartForm.extraLarge
+                form: ChartForm.extraLarge,
+                valueSpecifier: "%.2f \(Locale.current.currencySymbol ?? "€")"
             )
             .frame(height: 400)
         }
     }
+
 }
 
