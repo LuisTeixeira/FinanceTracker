@@ -29,7 +29,7 @@ class TransactionGraphViewModel: ObservableObject {
                 dailyTotal = (dailyTotal * 100).rounded() / 100
                 
                 if !dailyExpenses.isEmpty {
-                    tmpGraphData.append((date.formatted(), dailyTotal))
+                    tmpGraphData.append((date.formatted(.dateTime.day().month(.twoDigits).year()), dailyTotal))
                 }
             }
             self.graphData = tmpGraphData
