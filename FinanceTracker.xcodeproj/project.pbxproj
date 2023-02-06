@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		621E052E29912B2F004463C8 /* TransactionGraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E052D29912B2F004463C8 /* TransactionGraphViewModel.swift */; };
+		621E053029913283004463C8 /* LastTransactionsGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E052F29913283004463C8 /* LastTransactionsGraph.swift */; };
+		621E05332991369D004463C8 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 621E05322991369D004463C8 /* SwiftUICharts */; };
 		6287AE1C2989D6C80046D5BC /* TransactionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6287AE1B2989D6C80046D5BC /* TransactionEditor.swift */; };
 		62A5BDE8298C5AB300407CAE /* AuthenticationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A5BDE7298C5AB300407CAE /* AuthenticationHeader.swift */; };
 		62A5BDEA298C5E6D00407CAE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A5BDE9298C5E6D00407CAE /* RegisterView.swift */; };
@@ -40,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		621E052D29912B2F004463C8 /* TransactionGraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionGraphViewModel.swift; sourceTree = "<group>"; };
+		621E052F29913283004463C8 /* LastTransactionsGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastTransactionsGraph.swift; sourceTree = "<group>"; };
 		6287AE1B2989D6C80046D5BC /* TransactionEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditor.swift; sourceTree = "<group>"; };
 		62A5BDE7298C5AB300407CAE /* AuthenticationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHeader.swift; sourceTree = "<group>"; };
 		62A5BDE9298C5E6D00407CAE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62A5BDFC298DB53900407CAE /* FirebaseFirestoreSwift in Frameworks */,
+				621E05332991369D004463C8 /* SwiftUICharts in Frameworks */,
 				62B0A4562986FA33006C89D2 /* OrderedCollections in Frameworks */,
 				62A5BDFA298DB53900407CAE /* FirebaseFirestore in Frameworks */,
 				62A5BDF8298DB53900407CAE /* FirebaseAuth in Frameworks */,
@@ -84,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		621E052C29912AD6004463C8 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				621E052D29912B2F004463C8 /* TransactionGraphViewModel.swift */,
+				621E052F29913283004463C8 /* LastTransactionsGraph.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 		6287AE192989D6770046D5BC /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +203,7 @@
 		62E3668E2988705300B0106D /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				621E052C29912AD6004463C8 /* Graph */,
 				6287AE1A2989D68F0046D5BC /* Form */,
 				6287AE192989D6770046D5BC /* List */,
 			);
@@ -258,6 +274,7 @@
 				62A5BDF9298DB53900407CAE /* FirebaseFirestore */,
 				62A5BDFB298DB53900407CAE /* FirebaseFirestoreSwift */,
 				62A5BDFD298DB53900407CAE /* FirebaseStorage */,
+				621E05322991369D004463C8 /* SwiftUICharts */,
 			);
 			productName = FinanceTracker;
 			productReference = 62B0A41E29854F88006C89D2 /* FinanceTracker.app */;
@@ -290,6 +307,7 @@
 			packageReferences = (
 				62B0A4522986FA33006C89D2 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				62A5BDF6298DB53900407CAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				621E05312991369C004463C8 /* XCRemoteSwiftPackageReference "chartview" */,
 			);
 			productRefGroup = 62B0A41F29854F88006C89D2 /* Products */;
 			projectDirPath = "";
@@ -319,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621E052E29912B2F004463C8 /* TransactionGraphViewModel.swift in Sources */,
 				62F87CDB298E867700707DA2 /* Overview.swift in Sources */,
 				62B0A4342985960B006C89D2 /* PreviewData.swift in Sources */,
 				62A5BDED298C603700407CAE /* CustomTextInputField.swift in Sources */,
@@ -327,6 +346,7 @@
 				62B0A43F2985DD2B006C89D2 /* TransactionsViewModel.swift in Sources */,
 				62B0A4512986F5FB006C89D2 /* TransactionService.swift in Sources */,
 				62A5BDEA298C5E6D00407CAE /* RegisterView.swift in Sources */,
+				621E053029913283004463C8 /* LastTransactionsGraph.swift in Sources */,
 				62B0A42429854F88006C89D2 /* ContentView.swift in Sources */,
 				62E3669529887B6A00B0106D /* TransactionList.swift in Sources */,
 				62B0A4362985A42C006C89D2 /* TransactionView.swift in Sources */,
@@ -539,6 +559,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		621E05312991369C004463C8 /* XCRemoteSwiftPackageReference "chartview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apppear/chartview.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
 		62A5BDF6298DB53900407CAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -558,6 +586,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		621E05322991369D004463C8 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 621E05312991369C004463C8 /* XCRemoteSwiftPackageReference "chartview" */;
+			productName = SwiftUICharts;
+		};
 		62A5BDF7298DB53900407CAE /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 62A5BDF6298DB53900407CAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

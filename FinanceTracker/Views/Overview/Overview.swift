@@ -9,19 +9,22 @@ import SwiftUI
 
 struct Overview: View {
     var userId: String
-    @ObservedObject var viewModel: RecentTransactionsViewModel
+    @ObservedObject var recentTransactionsViewModel: RecentTransactionsViewModel
+    @ObservedObject var transactionGraphViewModel: TransactionGraphViewModel
     @State private var isAddingNewTransaction = false
     @State private var newTransaction = Transaction()
     
     init(withUserId userId: String) {
         self.userId = userId
-        viewModel = RecentTransactionsViewModel(widthUserId: userId)
+        recentTransactionsViewModel = RecentTransactionsViewModel(widthUserId: userId)
+        transactionGraphViewModel = TransactionGraphViewModel(withUserId: userId)
     }
     
     var body: some View {
         ScrollView {
             VStack{
-                RecentTransactions(viewModel: viewModel)
+                LastTransactionsGraph(viewModel: transactionGraphViewModel)
+                RecentTransactions(viewModel: recentTransactionsViewModel)
             }
             .navigationTitle("Overview")
             .toolbar {
@@ -46,7 +49,8 @@ struct Overview: View {
                             ToolbarItem {
                                 Button {
                                     TransactionService().addTransaction(userId: userId, transaction: newTransaction) {
-                                        viewModel.fetchRecentTransactions()
+                                        recentTransactionsViewModel.fetchRecentTransactions()
+                                        transactionGraphViewModel.getGraphData()
                                         isAddingNewTransaction = false
                                     }
                                 } label: {
