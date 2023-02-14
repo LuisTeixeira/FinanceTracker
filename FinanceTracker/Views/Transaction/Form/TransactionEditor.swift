@@ -38,6 +38,7 @@ struct TransactionEditor: View {
                 Toggle("Is Transfer", isOn: $transaction.isTransfer)
             }
         }
+        .background(Color.background)
     }
 }
 

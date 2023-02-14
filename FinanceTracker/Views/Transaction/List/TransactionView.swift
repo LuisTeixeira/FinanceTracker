@@ -36,7 +36,7 @@ struct TransactionView: View {
             
             Text(transaction.signedAmount, format: .currency(code: Locale.current.currency?.identifier ?? "EUR"))
                 .bold()
-                .foregroundColor(transaction.isExpense ? .primary : .green)
+                .foregroundColor(transaction.isExpense ? Color.expense : Color.income)
         }.padding([.top, .bottom], 8)
     }
 }

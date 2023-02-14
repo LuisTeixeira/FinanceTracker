@@ -17,7 +17,13 @@ struct LastTransactionsGraph: View {
             BarChartView(
                 data: ChartData(values: viewModel.graphData),
                 title: total.formatted(.currency(code: Locale.current.currency?.identifier ?? "EUR")),
-                style: Styles.barChartMidnightGreenDark,
+                style: ChartStyle(
+                    backgroundColor: Color.background, //3B5147, 313D34
+                    accentColor: Color.side,
+                    secondGradientColor: Color.nav,
+                    textColor: Color.side,
+                    legendTextColor: Color.side,
+                    dropShadowColor: Color.gray),
                 form: ChartForm.extraLarge,
                 valueSpecifier: "%.2f \(Locale.current.currencySymbol ?? "€")"
             )

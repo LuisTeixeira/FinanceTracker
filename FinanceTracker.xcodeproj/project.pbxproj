@@ -40,6 +40,7 @@
 		62E3669529887B6A00B0106D /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3669429887B6A00B0106D /* TransactionList.swift */; };
 		62F87CD8298E7A5200707DA2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F87CD7298E7A5200707DA2 /* AuthenticationViewModel.swift */; };
 		62F87CDB298E867700707DA2 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F87CDA298E867700707DA2 /* Overview.swift */; };
+		62FA3423299C446E00BBA273 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FA3422299C446E00BBA273 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		62E3669429887B6A00B0106D /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		62F87CD7298E7A5200707DA2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		62F87CDA298E867700707DA2 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
+		62FA3422299C446E00BBA273 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				62E3668C2988659D00B0106D /* DateExtensions.swift */,
+				62FA3422299C446E00BBA273 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				621E052E29912B2F004463C8 /* TransactionGraphViewModel.swift in Sources */,
 				62F87CDB298E867700707DA2 /* Overview.swift in Sources */,
+				62FA3423299C446E00BBA273 /* Color.swift in Sources */,
 				62B0A4342985960B006C89D2 /* PreviewData.swift in Sources */,
 				62A5BDED298C603700407CAE /* CustomTextInputField.swift in Sources */,
 				62F87CD8298E7A5200707DA2 /* AuthenticationViewModel.swift in Sources */,

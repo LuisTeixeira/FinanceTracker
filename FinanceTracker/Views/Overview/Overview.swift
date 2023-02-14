@@ -61,7 +61,7 @@ struct Overview: View {
                 }
             }
         }
-        .background(Color(.systemFill))
+        .background(Color.background)
 
     }
 }
