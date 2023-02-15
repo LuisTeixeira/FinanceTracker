@@ -14,15 +14,27 @@ struct Overview: View {
     @State private var isAddingNewTransaction = false
     @State private var newTransaction = Transaction()
     
+    private let entries: [GraphEntry]
+    
     init(withUserId userId: String) {
         self.userId = userId
         recentTransactionsViewModel = RecentTransactionsViewModel(widthUserId: userId)
         transactionGraphViewModel = TransactionGraphViewModel(withUserId: userId)
+        
+        // Test swift chart
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        self.entries = [
+            GraphEntry(date: dateFormatter.date(from: "29/01/2023")!, value: -23.4),
+            GraphEntry(date: dateFormatter.date(from: "30/01/2023")!, value: -343.99),
+            GraphEntry(date: dateFormatter.date(from: "31/01/2023")!, value: 2345.0)
+        ]
     }
     
     var body: some View {
         ScrollView {
             VStack{
+                RecentChart(entries: self.entries)
                 LastTransactionsGraph(viewModel: transactionGraphViewModel)
                 RecentTransactions(viewModel: recentTransactionsViewModel)
             }

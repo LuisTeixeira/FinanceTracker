@@ -41,6 +41,7 @@
 		62F87CD8298E7A5200707DA2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F87CD7298E7A5200707DA2 /* AuthenticationViewModel.swift */; };
 		62F87CDB298E867700707DA2 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F87CDA298E867700707DA2 /* Overview.swift */; };
 		62FA3423299C446E00BBA273 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FA3422299C446E00BBA273 /* Color.swift */; };
+		62FA3425299D836A00BBA273 /* RecentChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FA3424299D836A00BBA273 /* RecentChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		62F87CD7298E7A5200707DA2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		62F87CDA298E867700707DA2 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		62FA3422299C446E00BBA273 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		62FA3424299D836A00BBA273 /* RecentChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				621E052D29912B2F004463C8 /* TransactionGraphViewModel.swift */,
 				621E052F29913283004463C8 /* LastTransactionsGraph.swift */,
+				62FA3424299D836A00BBA273 /* RecentChart.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				62E3669529887B6A00B0106D /* TransactionList.swift in Sources */,
 				62B0A4362985A42C006C89D2 /* TransactionView.swift in Sources */,
 				62E3668D2988659D00B0106D /* DateExtensions.swift in Sources */,
+				62FA3425299D836A00BBA273 /* RecentChart.swift in Sources */,
 				6287AE1C2989D6C80046D5BC /* TransactionEditor.swift in Sources */,
 				62E36693298878E600B0106D /* RecentTransactionsViewModel.swift in Sources */,
 				62B0A42229854F88006C89D2 /* FinanceTrackerApp.swift in Sources */,
