@@ -10,33 +10,21 @@ import SwiftUI
 struct Overview: View {
     var userId: String
     @ObservedObject var recentTransactionsViewModel: RecentTransactionsViewModel
-    @ObservedObject var transactionGraphViewModel: TransactionGraphViewModel
+    @ObservedObject var recentChartViewModel: RecentChartViewModel
     @State private var isAddingNewTransaction = false
     @State private var newTransaction = Transaction()
-    
-    private let entries: [GraphEntry]
-    
+        
     init(withUserId userId: String) {
         self.userId = userId
         recentTransactionsViewModel = RecentTransactionsViewModel(widthUserId: userId)
-        transactionGraphViewModel = TransactionGraphViewModel(withUserId: userId)
-        
-        // Test swift chart
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        self.entries = [
-            GraphEntry(date: dateFormatter.date(from: "29/01/2023")!, value: -23.4),
-            GraphEntry(date: dateFormatter.date(from: "30/01/2023")!, value: -343.99),
-            GraphEntry(date: dateFormatter.date(from: "31/01/2023")!, value: 2345.0)
-        ]
+        recentChartViewModel = RecentChartViewModel(withUserId: userId)
     }
     
     var body: some View {
         ScrollView {
             VStack{
-                RecentChart(entries: self.entries)
-                LastTransactionsGraph(viewModel: transactionGraphViewModel)
-                RecentTransactions(viewModel: recentTransactionsViewModel)
+                RecentChart(viewModel: recentChartViewModel).frame(height: 200).padding()
+                RecentTransactions(viewModel: recentTransactionsViewModel).padding()
             }
             .navigationTitle("Overview")
             .toolbar {
@@ -62,7 +50,7 @@ struct Overview: View {
                                 Button {
                                     TransactionService().addTransaction(userId: userId, transaction: newTransaction) {
                                         recentTransactionsViewModel.fetchRecentTransactions()
-                                        transactionGraphViewModel.getGraphData()
+                                        recentChartViewModel.getGraphData()
                                         isAddingNewTransaction = false
                                     }
                                 } label: {
