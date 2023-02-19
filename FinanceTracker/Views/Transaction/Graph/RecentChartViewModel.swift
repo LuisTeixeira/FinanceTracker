@@ -17,6 +17,12 @@ class RecentChartViewModel: ObservableObject {
         self.getGraphData()
     }
     
+    var total: Double {
+        return graphEntries.reduce(into: 0.0) { partialResult, entry in
+            partialResult = partialResult + entry.value
+        }
+    }
+    
     func getGraphData() {
         TransactionService().fetchTransactions(userId: userId, limitTo: 10) { transactions in
             

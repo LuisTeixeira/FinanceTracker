@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		623B0678299EE67C0020E66B /* RecentChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B0677299EE67C0020E66B /* RecentChartViewModel.swift */; };
+		6269AFC129A214BD009A1040 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269AFC029A214BD009A1040 /* Double.swift */; };
 		6287AE1C2989D6C80046D5BC /* TransactionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6287AE1B2989D6C80046D5BC /* TransactionEditor.swift */; };
 		62A5BDE8298C5AB300407CAE /* AuthenticationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A5BDE7298C5AB300407CAE /* AuthenticationHeader.swift */; };
 		62A5BDEA298C5E6D00407CAE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A5BDE9298C5E6D00407CAE /* RegisterView.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		623B0677299EE67C0020E66B /* RecentChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChartViewModel.swift; sourceTree = "<group>"; };
+		6269AFC029A214BD009A1040 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		6287AE1B2989D6C80046D5BC /* TransactionEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditor.swift; sourceTree = "<group>"; };
 		62A5BDE7298C5AB300407CAE /* AuthenticationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHeader.swift; sourceTree = "<group>"; };
 		62A5BDE9298C5E6D00407CAE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			children = (
 				62E3668C2988659D00B0106D /* DateExtensions.swift */,
 				62FA3422299C446E00BBA273 /* Color.swift */,
+				6269AFC029A214BD009A1040 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				62B0A4512986F5FB006C89D2 /* TransactionService.swift in Sources */,
 				62A5BDEA298C5E6D00407CAE /* RegisterView.swift in Sources */,
 				623B0678299EE67C0020E66B /* RecentChartViewModel.swift in Sources */,
+				6269AFC129A214BD009A1040 /* Double.swift in Sources */,
 				62B0A42429854F88006C89D2 /* ContentView.swift in Sources */,
 				62E3669529887B6A00B0106D /* TransactionList.swift in Sources */,
 				62B0A4362985A42C006C89D2 /* TransactionView.swift in Sources */,
