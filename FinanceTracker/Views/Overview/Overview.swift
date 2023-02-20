@@ -23,7 +23,7 @@ struct Overview: View {
     var body: some View {
         ScrollView {
             VStack{
-                RecentChart(viewModel: recentChartViewModel).frame(height: 200).padding()
+                RecentChart(viewModel: recentChartViewModel).padding()
                 RecentTransactions(viewModel: recentTransactionsViewModel).padding()
             }
             .navigationTitle("Overview")
