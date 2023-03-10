@@ -21,7 +21,7 @@ struct TransactionService {
         
         query.getDocuments { snapshot, error in
             if let error = error {
-                print("DEBUG: Failed to sing in with error \(error.localizedDescription)")
+                print("DEBUG: Error retrieving transactions with error \(error.localizedDescription)")
                 return
             }
             guard let documents = snapshot?.documents else {return}
