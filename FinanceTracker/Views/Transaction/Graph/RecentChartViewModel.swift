@@ -24,7 +24,7 @@ class RecentChartViewModel: ObservableObject {
     }
     
     func getGraphData() {
-        TransactionService().fetchTransactions(userId: userId, limitTo: 10) { transactions in
+        TransactionService().fetchTransactions(userId: userId, accountId: "", limitTo: 10) { transactions in
             
             for date in stride(from: transactions.last?.date ?? Date.now, through: Date.now, by: 60 * 60 * 24) {
                 

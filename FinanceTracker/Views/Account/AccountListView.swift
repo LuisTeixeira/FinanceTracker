@@ -22,7 +22,11 @@ struct AccountListView: View {
         VStack {
             List {
                 ForEach(viewModel.accounts, id: \.id) { account in
-                    AccountRowView(account: account)
+                    NavigationLink{
+                        TransactionList(withUserId: userId, account: account)
+                    } label: {
+                        AccountRowView(account: account)
+                    }
                 }
             }
         }

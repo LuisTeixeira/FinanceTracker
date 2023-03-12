@@ -12,4 +12,8 @@ struct Account: Identifiable, Decodable, Encodable, Hashable {
     @DocumentID var id = ""
     var accountName = ""
     var accountValue: Double = .zero
+    
+    mutating func addValue(value: Double) {
+        self.accountValue += value
+    }
 }

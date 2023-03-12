@@ -19,7 +19,7 @@ class RecentTransactionsViewModel : ObservableObject {
     }
     
     func fetchRecentTransactions() {
-        service.fetchTransactions(userId: userId, limitTo: 3) { transactions in
+        service.fetchTransactions(userId: userId, accountId: "", limitTo: 3) { transactions in
             self.transactions = transactions
         }
     }

@@ -20,7 +20,7 @@ struct RecentTransactions: View {
                 Spacer()
                 
                 NavigationLink {
-                    TransactionList(withUserId: self.authenticationViewModel.userSession!.uid)
+                    //TransactionList(withUserId: self.authenticationViewModel.userSession!.uid)
                 } label: {
                     HStack(spacing: 4) {
                         Text("See All")

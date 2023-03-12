@@ -11,17 +11,18 @@ import Collections
 
 struct TransactionService {
     
-    func fetchTransactions(userId: String, limitTo: Int, completion: @escaping([Transaction]) -> Void) {
+    func fetchTransactions(userId: String, accountId: String, limitTo: Int, completion: @escaping([Transaction]) -> Void) {
         var query = Firestore.firestore()
             .collection("transactions")
             .whereField("userId", isEqualTo: userId)
             .order(by: "date", descending: true)
         
         query = (limitTo > 0) ? query.limit(to: limitTo) : query
+        query = (!accountId.isEmpty) ? query.whereField("accountId", isEqualTo: accountId) : query
         
         query.getDocuments { snapshot, error in
             if let error = error {
-                print("DEBUG: Error retrieving transactions with error \(error.localizedDescription)")
+                print("DEBUG: Failed to sing in with error \(error.localizedDescription)")
                 return
             }
             guard let documents = snapshot?.documents else {return}

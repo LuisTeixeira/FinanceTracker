@@ -18,7 +18,7 @@ struct Transaction : Identifiable, Decodable, Encodable, Hashable {
     var type = ""
     var isExpense = true
     var isTransfer = false
-    var accountId = ""
+    //var accountId = ""
     
     var signedAmount: Double {
         return isExpense ? -amount : amount

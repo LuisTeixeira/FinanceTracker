@@ -9,11 +9,13 @@ import SwiftUI
 
 struct TransactionList: View {
     var userId: String
+    var account: Account
     @ObservedObject var viewModel: TransactionsViewModel
     
-    init(withUserId userId: String) {
+    init(withUserId userId: String, account: Account) {
         self.userId = userId
-        self.viewModel = TransactionsViewModel(widthUserId: self.userId)
+        self.account = account
+        self.viewModel = TransactionsViewModel(widthUserId: self.userId, accountId: account.id!)
     }
     
     var body: some View {

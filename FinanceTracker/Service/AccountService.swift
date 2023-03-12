@@ -13,7 +13,7 @@ struct AccountService {
     func addAccount(userId: String, account: Account, completion: @escaping() -> Void) {
         let data = [
             "accountName": account.accountName,
-            "accountName": account.accountValue,
+            "accountValue": account.accountValue,
             "userId": userId
         ] as [String : Any]
         
@@ -21,6 +21,16 @@ struct AccountService {
             .addDocument(data: data) { error in
                 completion()
             }
+    }
+    
+    func updateAccount(account: Account, completion: @escaping() -> Void ) {
+        let data = [
+            "accountValue": account.accountValue
+        ]
+        
+        Firestore.firestore().collection("accounts").document(account.id!).updateData(data){ error in
+            completion()
+        }
     }
     
     func fetchAccounts(userId: String, completion: @escaping([Account]) -> Void) {
