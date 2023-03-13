@@ -53,7 +53,7 @@ struct TransactionService {
     
     func addTransaction(userId: String, transaction: Transaction, completion: @escaping() -> Void) {
         let data = [
-            "account": transaction.account,
+            "accountId": transaction.accountId,
             "amount": transaction.amount,
             "category": transaction.category,
             "date": transaction.date,

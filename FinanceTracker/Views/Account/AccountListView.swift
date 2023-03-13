@@ -65,6 +65,9 @@ struct AccountListView: View {
                     }
             }
         }
+        .onAppear {
+            viewModel.fetchAccounts()
+        }
     }
 }
 

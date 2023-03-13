@@ -24,7 +24,6 @@ struct TransactionEditor: View {
             Section("What") {
                 TextField("Amount", value: $transaction.amount, formatter: currencyFormatter)
                 TextField("Merchant", text: $transaction.merchant)
-                TextField("Account", text: $transaction.account)
             }
             
             Section("When") {

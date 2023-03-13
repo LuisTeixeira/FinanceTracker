@@ -16,11 +16,14 @@ class CreateTransactionUseCase {
         self.userId = userId
     }
     
-    func createTransaction(forAccount account: Account, transaction: Transaction) {
+    func createTransaction(forAccount account: Account, transaction: Transaction, completion: @escaping() -> Void) {
         var copyAccount = account
+        var copyTransaction = transaction
+        copyTransaction.accountId = account.id!
         copyAccount.addValue(value: transaction.signedAmount)
-        transactionService.addTransaction(userId: userId, transaction: transaction, completion: {
+        transactionService.addTransaction(userId: userId, transaction: copyTransaction, completion: {
             self.accountService.updateAccount(account: copyAccount){}
+            completion()
         })
     }
 }

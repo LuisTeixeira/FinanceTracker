@@ -11,14 +11,13 @@ import FirebaseFirestoreSwift
 struct Transaction : Identifiable, Decodable, Encodable, Hashable {
     @DocumentID var id = ""
     var date = Date.now
-    var account = ""
     var merchant = ""
     var amount = 0.0
     var category = ""
     var type = ""
     var isExpense = true
     var isTransfer = false
-    //var accountId = ""
+    var accountId = ""
     
     var signedAmount: Double {
         return isExpense ? -amount : amount

@@ -27,39 +27,6 @@ struct Overview: View {
                 RecentTransactions(viewModel: recentTransactionsViewModel).padding()
             }
             .navigationTitle("Overview")
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        newTransaction = Transaction()
-                        isAddingNewTransaction = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
-            .sheet(isPresented: $isAddingNewTransaction) {
-                NavigationStack {
-                    TransactionEditor(transaction: $newTransaction)
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button("Cancel") {
-                                    isAddingNewTransaction = false
-                                }
-                            }
-                            ToolbarItem {
-                                Button {
-                                    TransactionService().addTransaction(userId: userId, transaction: newTransaction) {
-                                        recentTransactionsViewModel.fetchRecentTransactions()
-                                        recentChartViewModel.getGraphData()
-                                        isAddingNewTransaction = false
-                                    }
-                                } label: {
-                                    Text("Add")
-                                }
-                            }
-                        }
-                }
-            }
         }
         .background(Color.background)
 
