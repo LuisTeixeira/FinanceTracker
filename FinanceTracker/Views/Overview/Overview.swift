@@ -11,8 +11,6 @@ struct Overview: View {
     var userId: String
     @ObservedObject var recentTransactionsViewModel: RecentTransactionsViewModel
     @ObservedObject var recentChartViewModel: RecentChartViewModel
-    @State private var isAddingNewTransaction = false
-    @State private var newTransaction = Transaction()
         
     init(withUserId userId: String) {
         self.userId = userId
@@ -23,6 +21,7 @@ struct Overview: View {
     var body: some View {
         ScrollView {
             VStack{
+                AccountsCard(userId: userId).padding()
                 RecentChart(viewModel: recentChartViewModel).padding()
                 RecentTransactions(viewModel: recentTransactionsViewModel).padding()
             }

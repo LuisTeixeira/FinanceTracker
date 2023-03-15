@@ -14,8 +14,8 @@ struct ContentView: View {
             if authenticationViewModel.userSession == nil {
                 LoginView()
             } else {
-                AccountListView(withUserId: self.authenticationViewModel.userSession!.uid)
-                //Overview(withUserId: self.authenticationViewModel.userSession!.uid)
+                //AccountListPage(withUserId: self.authenticationViewModel.userSession!.uid)
+                Overview(withUserId: self.authenticationViewModel.userSession!.uid)
             }
         }
     }
