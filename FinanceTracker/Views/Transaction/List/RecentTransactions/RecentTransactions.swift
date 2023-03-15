@@ -30,10 +30,13 @@ struct RecentTransactions: View {
             }
             .padding(.top)
             
-            ForEach(viewModel.transactions, id: \.id) { transaction in
-                TransactionView(transaction: transaction)
+            ForEach(viewModel.transactions, id: \.id) { transactionViewModel in
+                RecentTransactionView(transactionViewModel: transactionViewModel)
                 Divider()
             }
+        }
+        .onAppear {
+            viewModel.fetchRecentTransactions()
         }
         .padding()
         .background(.background)

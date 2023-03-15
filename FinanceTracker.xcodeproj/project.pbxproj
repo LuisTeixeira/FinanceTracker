@@ -16,6 +16,9 @@
 		62209E9C29BE568200A34A14 /* CreateTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209E9B29BE568200A34A14 /* CreateTransactionUseCase.swift */; };
 		62209E9E29C13BC600A34A14 /* AccountListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209E9D29C13BC600A34A14 /* AccountListView.swift */; };
 		62209EA029C1457000A34A14 /* AccountsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209E9F29C1457000A34A14 /* AccountsCard.swift */; };
+		62209EA329C2783C00A34A14 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209EA229C2783C00A34A14 /* TransactionViewModel.swift */; };
+		62209EA529C27C1800A34A14 /* ListRecentTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209EA429C27C1800A34A14 /* ListRecentTransactionsUseCase.swift */; };
+		62209EA729C28E0F00A34A14 /* RecentTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209EA629C28E0F00A34A14 /* RecentTransactionView.swift */; };
 		623B0678299EE67C0020E66B /* RecentChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B0677299EE67C0020E66B /* RecentChartViewModel.swift */; };
 		6269AFC129A214BD009A1040 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269AFC029A214BD009A1040 /* Double.swift */; };
 		6287AE1C2989D6C80046D5BC /* TransactionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6287AE1B2989D6C80046D5BC /* TransactionEditor.swift */; };
@@ -62,6 +65,9 @@
 		62209E9B29BE568200A34A14 /* CreateTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionUseCase.swift; sourceTree = "<group>"; };
 		62209E9D29C13BC600A34A14 /* AccountListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListView.swift; sourceTree = "<group>"; };
 		62209E9F29C1457000A34A14 /* AccountsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCard.swift; sourceTree = "<group>"; };
+		62209EA229C2783C00A34A14 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		62209EA429C27C1800A34A14 /* ListRecentTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecentTransactionsUseCase.swift; sourceTree = "<group>"; };
+		62209EA629C28E0F00A34A14 /* RecentTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionView.swift; sourceTree = "<group>"; };
 		623B0677299EE67C0020E66B /* RecentChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChartViewModel.swift; sourceTree = "<group>"; };
 		6269AFC029A214BD009A1040 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		6287AE1B2989D6C80046D5BC /* TransactionEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditor.swift; sourceTree = "<group>"; };
@@ -143,8 +149,17 @@
 			isa = PBXGroup;
 			children = (
 				62209E9B29BE568200A34A14 /* CreateTransactionUseCase.swift */,
+				62209EA429C27C1800A34A14 /* ListRecentTransactionsUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		62209EA129C2782500A34A14 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				62209EA229C2783C00A34A14 /* TransactionViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		6287AE192989D6770046D5BC /* List */ = {
@@ -210,6 +225,7 @@
 		62B0A42029854F88006C89D2 /* FinanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				62209EA129C2782500A34A14 /* ViewModels */,
 				62209E9A29B9477D00A34A14 /* UseCases */,
 				62F87CD5298E749200707DA2 /* Extensions */,
 				62F87CD4298E748700707DA2 /* Model */,
@@ -274,6 +290,7 @@
 			children = (
 				62E3668F298875EC00B0106D /* RecentTransactions.swift */,
 				62E36692298878E600B0106D /* RecentTransactionsViewModel.swift */,
+				62209EA629C28E0F00A34A14 /* RecentTransactionView.swift */,
 			);
 			path = RecentTransactions;
 			sourceTree = "<group>";
@@ -413,6 +430,7 @@
 				6269AFC129A214BD009A1040 /* Double.swift in Sources */,
 				62B0A42429854F88006C89D2 /* ContentView.swift in Sources */,
 				62E3669529887B6A00B0106D /* TransactionList.swift in Sources */,
+				62209EA529C27C1800A34A14 /* ListRecentTransactionsUseCase.swift in Sources */,
 				62B0A4362985A42C006C89D2 /* TransactionView.swift in Sources */,
 				62E3668D2988659D00B0106D /* DateExtensions.swift in Sources */,
 				62FA3425299D836A00BBA273 /* RecentChart.swift in Sources */,
@@ -421,12 +439,14 @@
 				62209E9E29C13BC600A34A14 /* AccountListView.swift in Sources */,
 				62209EA029C1457000A34A14 /* AccountsCard.swift in Sources */,
 				62E36693298878E600B0106D /* RecentTransactionsViewModel.swift in Sources */,
+				62209EA729C28E0F00A34A14 /* RecentTransactionView.swift in Sources */,
 				62B0A42229854F88006C89D2 /* FinanceTrackerApp.swift in Sources */,
 				62209E9C29BE568200A34A14 /* CreateTransactionUseCase.swift in Sources */,
 				62209E9429B2B30400A34A14 /* AccountListPage.swift in Sources */,
 				62E36690298875EC00B0106D /* RecentTransactions.swift in Sources */,
 				620F85F429AA4E29000C510D /* Account.swift in Sources */,
 				62A5BDF1298DA58F00407CAE /* AuthenticationService.swift in Sources */,
+				62209EA329C2783C00A34A14 /* TransactionViewModel.swift in Sources */,
 				62B0A43229858A0C006C89D2 /* Transaction.swift in Sources */,
 				620F85F729ABA005000C510D /* AccountRowView.swift in Sources */,
 				62A5BDEF298C6AB900407CAE /* LoginView.swift in Sources */,
